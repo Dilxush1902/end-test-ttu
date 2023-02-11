@@ -5,7 +5,7 @@ import React from "react";
 import cls from "./Admission.module.scss";
 import AdmissionCard from "./AdmissionCard/AdmissionCard";
 
-const Admission = ({ setOpen }) => {
+const Admission = () => {
   const userId = Cookies.get("userId");
   const router = useRouter();
 

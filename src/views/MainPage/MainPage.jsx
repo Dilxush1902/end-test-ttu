@@ -20,6 +20,7 @@ const MainPage = () => {
   const [show, setShow] = useState(false);
   const userId = cookies.get("userId");
   const [open, setOpen] = useState(false);
+  const [loading,setLoading] = useState(false)
 
   const controlBanner = (event) => {
     //var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
@@ -28,6 +29,7 @@ const MainPage = () => {
     // }
   };
   useEffect(() => {
+    setLoading(true)
     window.addEventListener(
       "onwheel" in document ? "wheel" : "mousewheel",
       controlBanner
@@ -48,17 +50,17 @@ const MainPage = () => {
             <BannerDesktop setOpen={setOpen} open={open} />
           </div>
         }
-        <div className={cls.navbar}>
+     {loading &&   <div className={cls.navbar}>
           <div className={cls.sticky}>
             <Navbar />
           </div>
           <AboutUs />
           <Licence />
           <Profession />
-          <Admission setOpen={setOpen} />
+          <Admission/>
           <FAQ />
           <Footer />
-        </div>
+        </div>}
       </div>
     </div>
   );
