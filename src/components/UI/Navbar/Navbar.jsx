@@ -101,7 +101,7 @@ const Navbar = () => {
               <LogoIcon />
             </a>
           </Link>
-          {router.pathname !== "/personal" ? (
+        
             <>
               <div className={cls.button}>
                 {userId ? (
@@ -122,6 +122,7 @@ const Navbar = () => {
                   </CustomButton>
                 )}
               </div>
+              {router.pathname !== "/personal" && 
               <div className={cls.icon}>
                 <img
                   src="/images/menu.svg"
@@ -129,11 +130,9 @@ const Navbar = () => {
                   onClick={handleChangeOpen}
                   alt=""
                 />
-              </div>{" "}
+              </div>}
             </>
-          ) : (
-            ""
-          )}
+    
         </div>
 
         <Box className={cls.drawer}>

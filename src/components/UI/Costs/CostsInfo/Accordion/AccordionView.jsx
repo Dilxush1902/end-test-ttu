@@ -47,7 +47,7 @@ const AccordionView = (props) => {
               </div>
               <div className={cls.content}>
                 <span className={cls.info}>{item.name_uz}</span>
-                <span className={cls.costs}>Narxlari</span>
+                <span className={cls.costs}>Batafsil</span>
               </div>
             </div>
           </AccordionSummary>
