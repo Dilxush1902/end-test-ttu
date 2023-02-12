@@ -25,13 +25,13 @@ export default function UploadFile({
 
   const inputFile = (e) => {
     const file = e.target.files[0]
-    if (file && file.type.substr(0, 5) === 'image') {
+    // if (file && file.type.substr(0, 5) === 'image') {
       const formData = new FormData()
       formData.append('file', file)
       uploadImage(formData).then((res) => {
         onChange(name, res?.data?.filename)
       })
-    }
+    // }
   }
 
   return (
@@ -49,7 +49,7 @@ export default function UploadFile({
           />
           <input
             type='file'
-            accept='image/*'
+            accept='image/*,.pdf,.xls,.xlsx,.doc,.docx,.ppt,.pptx.'
             ref={fileInputRef}
             name={name}
             onChange={inputFile}
